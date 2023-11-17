@@ -38,7 +38,7 @@ fetchBreeds()
  
  function setOutput(event) {
     let breedId = event.currentTarget.value;
-
+   //  refs.catInfo.innerHTML = ``
  fetchCatByBreed (breedId)
     .then((data) => {
     let cat = []; 
@@ -47,18 +47,34 @@ fetchBreeds()
     breeds = cat.breeds;
     let arr = [];
     arr = breeds[0];
-    const h2Elname = document.createElement("h2");
-    const h3Eldescription = document.createElement("h3");
-    const h3Eltemperament = document.createElement("h3");
-    const imgEl = document.createElement("img");
 
-    h2Elname.textContent = arr.name;
-    h3Eldescription.textContent = arr.description;
-    h3Eltemperament.textContent = arr.temperament;
-    imgEl.src = cat.url;
-    imgEl.alt = arr.name;
 
-    refs.catInfo.append(imgEl, h2Elname, h3Eldescription, h3Eltemperament);
+   //  const h2Elname = document.createElement("h2");
+   //  const h3Eldescription = document.createElement("h3");
+   //  const h3Eltemperament = document.createElement("h3");
+   //  const imgEl = document.createElement("img");
+
+   //  h2Elname.classList.add("cat-name");
+   //  h3Eldescription.classList.add("cat-description");
+   //  h3Eltemperament.classList.add("cat-temperament");
+   //  imgEl.classList.add("cat-img");
+
+   //  h2Elname.textContent = arr.name;
+   //  h3Eldescription.textContent = arr.description;
+   //  h3Eltemperament.textContent = arr.temperament;
+   //  imgEl.src = cat.url;
+   //  imgEl.alt = arr.name;
+
+   //  refs.catInfo.append(imgEl, h2Elname, h3Eldescription, h3Eltemperament);
+
+
+//    refs.catInfo.innerHTML =   
+//   `<img class="cat-img" src="${cat.url}" alt="${arr.name}" width="50px" height="50px">
+//       <div class="cat">
+//          <h2 class="cat-name">${arr.name}</h2>
+//          <p class="cat-description">${arr.description}</p>
+//          <p class="cat-temperament">Temperament:${arr.temperament}</p>
+//       </div>`
 
       })
       .catch(function(err) {
