@@ -38,7 +38,7 @@ fetchBreeds()
  
  function setOutput(event) {
     let breedId = event.currentTarget.value;
-   //  refs.catInfo.innerHTML = ``
+    refs.catInfo.innerHTML = ``
  fetchCatByBreed (breedId)
     .then((data) => {
     let cat = []; 
@@ -68,13 +68,24 @@ fetchBreeds()
    //  refs.catInfo.append(imgEl, h2Elname, h3Eldescription, h3Eltemperament);
 
 
-//    refs.catInfo.innerHTML =   
-//   `<img class="cat-img" src="${cat.url}" alt="${arr.name}" width="50px" height="50px">
-//       <div class="cat">
-//          <h2 class="cat-name">${arr.name}</h2>
-//          <p class="cat-description">${arr.description}</p>
-//          <p class="cat-temperament">Temperament:${arr.temperament}</p>
-//       </div>`
+   refs.catInfo.innerHTML =   
+  `<img class="cat-img" src="${cat.url}" alt="${arr.name}" width="500px" height="100%">
+      <div class="cat">
+         <h1 class="cat-name">${arr.name}</h1>
+         <p class="cat-description">${arr.description}</p>
+         <p class="cat-temperament"><span class="title-temperament">Temperament: </span>${arr.temperament}</p>
+      </div>`
+      
+      const catList = document.querySelector('.cat')
+      // const catName = document.querySelector('.cat-name')
+      // const catDescription = document.querySelector('.cat-description')
+      // const catTemperament = document.querySelector('.cat-temperament')
+      const titleTemperament = document.querySelector('.title-temperament')
+
+      refs.catInfo.style.display = "flex";
+      catList.style.marginLeft = "20px"
+      catList.style.maxWidth = "800px"
+      titleTemperament.style.fontWeight = "800"
 
       })
       .catch(function(err) {
