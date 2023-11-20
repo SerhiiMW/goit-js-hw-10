@@ -4,8 +4,12 @@ import { fetchCatByBreed } from './cat-api';
 // import SlimSelect from 'slim-select'
 
 // new SlimSelect({
-//    select: '#single'
+//    select: '#selectElement'
 //  })
+
+const classes = {
+   hidden: "hidden",
+ };
 
 let storedBreeds = [];
 
@@ -29,6 +33,7 @@ fetchBreeds()
      }
  })
  .catch(function(err) {
+    refs.loader.classList.add(classes.hidden);
     console.log(err);
     Notify.failure(err.message);
  });
@@ -58,6 +63,7 @@ fetchBreeds()
 
       })
       .catch(function(err) {
+         refs.loader.classList.add(classes.hidden);
          console.log(err);
          Notify.failure(err.message);
       });

@@ -14,8 +14,8 @@ const classes = {
 };
 
   function fetchBreeds() {
-    refs.select.classList.add(classes.hidden);
     refs.loader.classList.remove(classes.hidden);
+    refs.select.classList.add(classes.hidden);
     const URL = `https://api.thecatapi.com/v1/breeds`;
     const API_KEY = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7"
 
@@ -28,15 +28,15 @@ const classes = {
       if (!response.ok) {
         throw new Error("404 not found!");
       }
-      refs.select.classList.remove(classes.hidden);
       refs.loader.classList.add(classes.hidden);
+      refs.select.classList.remove(classes.hidden);
       return response.json();
     });
   }
 
   function fetchCatByBreed(breedId) {
-    refs.catInfo.classList.add(classes.hidden);
     refs.loader.classList.remove(classes.hidden);
+    refs.catInfo.classList.add(classes.hidden);
     const URL = `https://api.thecatapi.com/v1/images/search`;
     const API_KEY = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7"
   
@@ -50,8 +50,8 @@ const classes = {
       if (!response.ok) {
         throw new Error("404 not found!");
       }
-      refs.catInfo.classList.remove(classes.hidden);
       refs.loader.classList.add(classes.hidden);
+      refs.catInfo.classList.remove(classes.hidden);
       return response.json();
     });
   }
