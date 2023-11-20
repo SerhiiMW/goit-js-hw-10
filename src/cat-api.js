@@ -9,9 +9,13 @@ const refs = {
   error: document.querySelector('.error'),
 }
 
+const classes = {
+  hidden: "hidden",
+};
+
   function fetchBreeds() {
-    refs.select.style.display = "none";
-    refs.loader.style.display = "inline";
+    refs.select.classList.add(classes.hidden);
+    refs.loader.classList.remove(classes.hidden);
     const URL = `https://api.thecatapi.com/v1/breeds`;
     const API_KEY = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7"
 
@@ -24,15 +28,15 @@ const refs = {
       if (!response.ok) {
         throw new Error("404 not found!");
       }
-      refs.loader.style.display = "none";
-      refs.select.style.display = "inline";
+      refs.select.classList.remove(classes.hidden);
+      refs.loader.classList.add(classes.hidden);
       return response.json();
     });
   }
 
   function fetchCatByBreed(breedId) {
-    refs.catInfo.style.display = "none";
-    refs.loader.style.display = "inline";
+    refs.catInfo.classList.add(classes.hidden);
+    refs.loader.classList.remove(classes.hidden);
     const URL = `https://api.thecatapi.com/v1/images/search`;
     const API_KEY = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7"
   
@@ -46,13 +50,11 @@ const refs = {
       if (!response.ok) {
         throw new Error("404 not found!");
       }
-      refs.loader.style.display = "none";
-      refs.catInfo.style.display = "inline";
+      refs.catInfo.classList.remove(classes.hidden);
+      refs.loader.classList.add(classes.hidden);
       return response.json();
     });
   }
-
-
 
   export { fetchBreeds };
   export { fetchCatByBreed };
