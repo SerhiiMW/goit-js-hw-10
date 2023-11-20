@@ -5,10 +5,9 @@ import { fetchCatByBreed } from './cat-api';
 // Notify.failure('Qui timide rogat docet negare');
 
 // import SlimSelect from 'slim-select'
-import axios from 'axios';
+// import axios from 'axios';
 
-axios.defaults.headers.common["x-api-key"] = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7";
-
+// axios.defaults.headers.common["x-api-key"] = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7";
 
 const refs = {
     select: document.querySelector('.breed-select'),
@@ -41,12 +40,14 @@ fetchBreeds()
     refs.catInfo.innerHTML = ``
  fetchCatByBreed (breedId)
     .then((data) => {
+   
     let cat = []; 
     cat = data[0];
     let breeds = {};
     breeds = cat.breeds;
     let arr = [];
     arr = breeds[0];
+
 
 
    //  const h2Elname = document.createElement("h2");
@@ -77,11 +78,12 @@ fetchBreeds()
       </div>`
       
       const catList = document.querySelector('.cat')
-      // const catName = document.querySelector('.cat-name')
+      const catImg = document.querySelector('.cat-img')
       // const catDescription = document.querySelector('.cat-description')
       // const catTemperament = document.querySelector('.cat-temperament')
       const titleTemperament = document.querySelector('.title-temperament')
 
+      catImg.style.marginTop = "10px"
       refs.catInfo.style.display = "flex";
       catList.style.marginLeft = "20px"
       catList.style.maxWidth = "800px"
