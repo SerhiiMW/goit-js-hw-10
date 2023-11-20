@@ -40,7 +40,6 @@ const refs = {
         breed_ids: breedId,
         api_key: API_KEY,
       });
-    refs.catInfo.classList.remove(classes.infoHidden);
     return fetch((`${URL}?${params}`),{headers: {
         'x-api-key': API_KEY
       }}).then((response) => {

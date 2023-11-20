@@ -9,6 +9,8 @@ import { fetchCatByBreed } from './cat-api';
 
 // axios.defaults.headers.common["x-api-key"] = "live_9NjgphPGH74YSYxqRUUuc0LqGKpWE0CiUvRBUaeqxH418ruNJH5hOcMAe8a5yNl7";
 
+let storedBreeds = [];
+
 const refs = {
     select: document.querySelector('.breed-select'),
     catInfo: document.querySelector('.cat-info'),
